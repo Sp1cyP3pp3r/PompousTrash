@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  background-color: #745d58;
+  display: grid;
+  grid-template-areas: "header header header" "main main aside" "footer footer footer";
+}
+body header {
+  grid-area: header;
+  background-color: tan;
+  display: flex;
+  flex-flow: row nowrap;
+}
+body main {
+  grid-area: main;
+  background-color: teal;
+}
+body aside {
+  grid-area: aside;
+  background-color: tomato;
+}
+body footer {
+  grid-area: footer;
+  background-color: darkolivegreen;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/*# sourceMappingURL=style.css.map */

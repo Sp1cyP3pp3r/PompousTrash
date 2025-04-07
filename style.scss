@@ -1,0 +1,46 @@
+$accentColor: #40E0D0;
+$secondColor: #745d58;
+$fontColor: #0a0a0a;
+
+body{
+    margin: 0;
+    background-color: $secondColor;
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "main main aside"
+        "footer footer footer"
+    ;
+
+    header{
+        grid-area: header;
+        background-color: tan;
+
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    main{
+        grid-area: main;
+        background-color: teal;
+
+    }
+
+    aside{
+        grid-area: aside;
+        background-color: tomato;
+    }
+
+    footer{
+        grid-area: footer;
+        background-color: darkolivegreen;
+
+    }
+
+}
+
+nav ul{
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+}
