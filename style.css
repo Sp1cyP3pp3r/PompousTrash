@@ -2,7 +2,7 @@ body {
   margin: 0;
   background-color: #745d58;
   display: grid;
-  grid-template-areas: "header header header" "main main aside" "footer footer footer";
+  grid-template-areas: "header header header header" "main main main aside" "footer footer footer footer";
 }
 body header {
   grid-area: header;
@@ -27,6 +27,4 @@ nav ul {
   list-style: none;
   display: flex;
   flex-flow: row wrap;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

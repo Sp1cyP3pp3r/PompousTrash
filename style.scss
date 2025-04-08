@@ -7,9 +7,9 @@ body{
     background-color: $secondColor;
     display: grid;
     grid-template-areas:
-        "header header header"
-        "main main aside"
-        "footer footer footer"
+        "header header header header"
+        "main main main aside"
+        "footer footer footer footer"
     ;
 
     header{
