@@ -1,6 +1,23 @@
-$accentColor: #40E0D0;
-$secondColor: #745d58;
+$accentColor: #223c91;
+$secondColor: #ffd66e;
+$thirdColor: #57ABB3;
+$fourthColor: #57ABB3;
 $fontColor: #0a0a0a;
+
+
+$fontHeading: 'Malgun Gothic';  
+$fontText: 'MingLiU-ExtB';
+
+h1, h2, h3, h4, h5, h6{
+    font-family: $fontHeading;
+    font-weight: bold;
+    background-image: linear-gradient(to bottom,
+        transparent 50%,
+        $secondColor 50%
+    );
+    background-size: 33% 100%;
+    background-repeat: no-repeat;
+}
 
 body{
     margin: 0;
@@ -11,6 +28,7 @@ body{
         "main main main aside"
         "footer footer footer footer"
     ;
+    font-family: $fontText;
 
     header{
         grid-area: header;
@@ -18,17 +36,37 @@ body{
 
         display: flex;
         flex-flow: row nowrap;
+
+        nav{
+            ul{
+                li{
+                    background-color: navajowhite;
+                    border: 5px solid $secondColor;
+                    font-size: 24px;
+                    font-family: 'Yu Gothic UI';
+                    font-weight: bolder;
+                }
+            }
+
+            .header-menu (@indexStart, @index){
+                
+            
+
+            .header-menu (1, 3);
+            }
+        }
     }
 
     main{
         grid-area: main;
         background-color: teal;
-
+        padding: 5%;
     }
 
     aside{
         grid-area: aside;
         background-color: tomato;
+        padding: 5%;
     }
 
     footer{
@@ -43,4 +81,8 @@ nav ul{
   list-style: none;
   display: flex;
   flex-flow: row wrap;
+}
+
+*:not(main) a{
+    text-decoration: none;
 }

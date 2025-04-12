@@ -1,0 +1,119 @@
+@accentColor: #223c91;
+@secondColor: #ffd66e;
+@thirdColor: #57ABB3;
+@fourthColor: #57ABB3;
+@fontColor: #0a0a0a;
+
+
+@fontHeading: 'Malgun Gothic';  
+@fontText: 'MingLiU-ExtB';
+
+h1, h2, h3, h4, h5, h6{
+    font-family: @fontHeading;
+    font-weight: bold;
+    background-image: linear-gradient(to bottom,
+        transparent 50%,
+        @secondColor 50%
+    );
+    background-size: 33% 100%;
+    background-repeat: no-repeat;
+}
+
+body{
+    margin: 0;
+    background-color: @secondColor;
+    display: grid;
+    grid-template-areas:
+        "header header header header"
+        "main main main aside"
+        "footer footer footer footer"
+    ;
+    font-family: @fontText;
+
+    header{
+        grid-area: header;
+        background-color: tan;
+
+        display: flex;
+        flex-flow: row nowrap;
+
+        nav {
+            ul {
+              position: relative; // Необходимо для позиционирования детей
+              height: 120px; // Фиксированная высота для видимости всех элементов
+              margin: 0;
+              padding: 0;
+          
+              li {
+                display: block;
+                position: absolute; // Абсолютное позиционирование для каскада
+                background-color: mediumaquamarine;
+                border: 5px solid @secondColor;
+                font-size: 24px;
+                font-family: 'Yu Gothic UI';
+                font-weight: bolder;
+                padding: 10px;
+                width: 150px; // Фиксированная ширина для стабильности
+                transform: rotate(-5deg); // Начальный угол наклона
+                transition: 0.3s; // Плавные анимации
+          
+                &:hover {
+                  transform: rotate(3deg) scale(1.1); // Эффект при наведении
+                  z-index: 10 !important;
+                }
+          
+                a {
+                  display: block;
+                  text-decoration: none;
+                  color: @fontColor;
+                }
+              }
+            }
+          
+            .header-menu(@index) when (@index > 0) {
+              .header-menu(@index - 1); // Рекурсивный вызов
+          
+              li:nth-child(@{index}) {
+                left: (@index - 1) * 20%; // Горизонтальное смещение
+                top: (@index - 1) * 15px; // Вертикальное смещение
+                z-index: @index; // Порядок наложения
+                transform: rotate((-5 + (@index * 2)) * 1deg);
+                //Динамический поворот
+                background-color: spin(@accentColor, @index * 20);
+                //Цветовая вариация
+              }
+            }
+          
+            .header-menu(5); // Генерируем стили для 5 элементов
+          }
+    }
+
+    main{
+        grid-area: main;
+        background-color: teal;
+        padding: 5%;
+    }
+
+    aside{
+        grid-area: aside;
+        background-color: tomato;
+        padding: 5%;
+    }
+
+    footer{
+        grid-area: footer;
+        background-color: darkolivegreen;
+
+    }
+
+}
+
+nav ul{
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+*:not(main) a{
+    text-decoration: none;
+}
