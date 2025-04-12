@@ -1,7 +1,7 @@
 @accentColor: #223c91;
 @secondColor: #ffd66e;
 @thirdColor: #57ABB3;
-@fourthColor: #57ABB3;
+@fourthColor: #eb699b;
 @fontColor: #0a0a0a;
 
 
@@ -39,52 +39,47 @@ body{
 
         nav {
             ul {
-              position: relative; // Необходимо для позиционирования детей
-              height: 120px; // Фиксированная высота для видимости всех элементов
-              margin: 0;
-              padding: 0;
-          
+              position: relative;
+              gap: 2em;
+
               li {
                 display: block;
-                position: absolute; // Абсолютное позиционирование для каскада
-                background-color: mediumaquamarine;
-                border: 5px solid @secondColor;
                 font-size: 24px;
                 font-family: 'Yu Gothic UI';
                 font-weight: bolder;
-                padding: 10px;
-                width: 150px; // Фиксированная ширина для стабильности
-                transform: rotate(-5deg); // Начальный угол наклона
-                transition: 0.3s; // Плавные анимации
+                width: 100%;
+                height: 100%;
+                text-align: center;
           
-                &:hover {
-                  transform: rotate(3deg) scale(1.1); // Эффект при наведении
-                  z-index: 10 !important;
+                &:nth-child(odd):not(:nth-child(1)){
+                  rotate: 6deg;
+                }
+                &:nth-child(even){
+                  rotate: -4deg;
+                }
+                
+                &:nth-child(1){
+                  rotate: -2deg;
+                }
+
+                .header-menu (@indexstart, @index) when (@indexstart <= @index) {
+                  &:nth-child(@{indexstart}) {
+                    @sinus: sin(@indexstart);
+                    margin-inline-start: -20% + (@indexstart - 1) * 6px - (@indexstart * 2.25px);
+                    margin-block-start: (@indexstart - 1) * 6px * @sinus * 2.3;
+                    z-index: @indexstart;
+                  }
+                  .header-menu(@indexstart + 1, @index);
                 }
           
-                a {
-                  display: block;
-                  text-decoration: none;
-                  color: @fontColor;
+                .header-menu(1, 4);
+
+                a{
+                  display: inline-block;
+                  width: 100%;
                 }
               }
             }
-          
-            .header-menu(@index) when (@index > 0) {
-              .header-menu(@index - 1); // Рекурсивный вызов
-          
-              li:nth-child(@{index}) {
-                left: (@index - 1) * 20%; // Горизонтальное смещение
-                top: (@index - 1) * 15px; // Вертикальное смещение
-                z-index: @index; // Порядок наложения
-                transform: rotate((-5 + (@index * 2)) * 1deg);
-                //Динамический поворот
-                background-color: spin(@accentColor, @index * 20);
-                //Цветовая вариация
-              }
-            }
-          
-            .header-menu(5); // Генерируем стили для 5 элементов
           }
     }
 
@@ -116,4 +111,39 @@ nav ul{
 
 *:not(main) a{
     text-decoration: none;
+}
+
+.button{
+  --shadow-color: color-mix(in oklab, var(--button-clr), black 75%);
+  @textColor: color-mix(in oklab, var(--button-clr), black 40%);
+  background-color: var(--button-clr);
+  border-inline-end: 0.25em var(--shadow-color) solid;
+  border-block-end: 0.25em var(--shadow-color) solid;
+  border-inline-start: 0em var(--shadow-color) solid;
+  border-block-start: 0em var(--shadow-color) solid;
+  transition: 0.2s 0.4s;
+  a{
+    color: @textColor;
+
+  }
+
+  &:hover{
+    --shadow-color: color-mix(in oklab, var(--button-clr), BLACK 35%);
+    border-inline-end-width: 0;
+    border-block-end-width: 0;
+    border-inline-start-width: 0.25em;
+    border-block-start-width: 0.25em;
+    transition: 0.2s 0.0s;
+  }
+
+  &:active{
+    --shadow-color: color-mix(in oklab, var(--button-clr), BLACK 25%);
+    --new-color: color-mix(in oklab, var(--button-clr), white 30%);
+    background-color: var(--new-color);
+    border-inline-end-width: 0.25em;
+    border-block-end-width: 0.25em;
+    border-inline-start-width: 0em;
+    border-block-start-width: 0em;
+    transition: 0s 0s;
+  }
 }
