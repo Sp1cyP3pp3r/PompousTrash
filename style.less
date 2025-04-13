@@ -1,41 +1,55 @@
-@accentColor: #223c91;
-@secondColor: #ffd66e;
-@thirdColor: #57ABB3;
-@fourthColor: #eb699b;
+@accentColor: #F36273;
+@secondColor: #F7E293;
+@thirdColor: #1DBEE8;
+@fourthColor: #FDB078;
+@fifthColor: #00A289;
 @fontColor: #0a0a0a;
 
 
 @fontHeading: 'Malgun Gothic';  
 @fontText: 'MingLiU-ExtB';
 
+:root{
+  --first-color: @accentColor;
+  --second-color: @secondColor;
+  --third-color: @thirdColor;
+  --fourth-color: @fourthColor;
+  --fifth-color: @fifthColor;
+}
+
 h1, h2, h3, h4, h5, h6{
     font-family: @fontHeading;
     font-weight: bold;
     background-image: linear-gradient(to bottom,
         transparent 50%,
-        @secondColor 50%
+        @fourthColor 50%
     );
     background-size: 33% 100%;
     background-repeat: no-repeat;
+    margin-block: 0%;
 }
 
 body{
     margin: 0;
     background-color: @secondColor;
     display: grid;
+    min-height: 100vh;
     grid-template-areas:
-        "header header header header"
+        "header header header aside"
         "main main main aside"
         "footer footer footer footer"
     ;
+    @blockHeight: 100px;
+    grid-template-rows: @blockHeight 3fr max(50px, (@blockHeight / 3));
+    
     font-family: @fontText;
 
     header{
         grid-area: header;
-        background-color: tan;
 
         display: flex;
         flex-flow: row nowrap;
+        max-height: 100px;
 
         nav {
             ul {
@@ -85,22 +99,59 @@ body{
 
     main{
         grid-area: main;
-        background-color: teal;
         padding: 5%;
+        margin: 3%;
+        background-color: #1DBEE82a;
     }
 
     aside{
         grid-area: aside;
-        background-color: tomato;
         padding: 5%;
+
+        & > figure:has(> h1){
+          display: flex;
+          flex-flow: column nowrap;
+          align-items: center;
+          text-align: center;
+
+          h1{
+            width: 100%;
+            height: 1.5em;
+
+            background-image: linear-gradient(to bottom, transparent 50%, @accentColor 50%, @accentColor 60%, transparent 60%, transparent 70%, @accentColor 70%, @accentColor 80%, transparent 80%);
+            background-size: 100% 100%;
+            background-repeat: repeat-x;
+
+            font-size: 2.5em;
+            font-family: 'Castellar';
+            color: @thirdColor;
+            text-shadow: 0.05em 0.05em 0 @secondColor;
+          }
+        }
     }
 
     footer{
         grid-area: footer;
-        background-color: darkolivegreen;
-
+        background-color: #1DBEE8;
     }
 
+
+    // background
+    &::before{
+      content: "background here";
+      font-size: 0;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      display: block;
+      z-index: -1;
+      background-color: @secondColor;
+      background-image: url(
+        https://www.davidericson-fineart.com/wp-content/uploads/2023/10/30x48-summer-social-min-scaled.jpg
+      );
+      background-blend-mode: hard-light;
+      background-size: cover;
+    }
 }
 
 nav ul{
@@ -114,7 +165,7 @@ nav ul{
 }
 
 .button{
-  --shadow-color: color-mix(in oklab, var(--button-clr), black 75%);
+  --shadow-color: color-mix(in oklab, var(--button-clr), black 50%);
   @textColor: color-mix(in oklab, var(--button-clr), black 40%);
   background-color: var(--button-clr);
   border-inline-end: 0.25em var(--shadow-color) solid;
