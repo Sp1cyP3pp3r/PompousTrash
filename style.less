@@ -17,6 +17,13 @@
   --fifth-color: @fifthColor;
 }
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body{
     margin: 0;
     background-color: @secondColor;
@@ -28,10 +35,10 @@ body{
         "footer footer"
     ;
     @blockHeight: 100px;
-    grid-template-rows: @blockHeight 3fr max(50px, (@blockHeight / 3));
+    grid-template-rows: @blockHeight 3fr @blockHeight;
     grid-template-columns: 2fr 1fr;
     font-family: @fontText;
-    font-size: 18px;
+    font-size: 18 px;
     scroll-behavior: smooth;
 
     header{
@@ -91,18 +98,58 @@ body{
         grid-area: main;
         padding: 5%;
         margin: 3%;
-        background-color: #1DBEE82a;
+        background-color: color-mix(in oklab, @thirdColor, transparent 100%);
 
         h1, h2, h3, h4, h5, h6{
           font-family: @fontHeading;
           font-weight: bold;
           background-image: linear-gradient(to bottom,
               transparent 50%,
-              @fourthColor 50%
+              @thirdColor 50%
           );
           background-size: 33% 100%;
           background-repeat: no-repeat;
           margin-block: 0%;
+      }
+
+      article{
+        p{
+          max-width: 72ch;
+          margin-inline: auto;
+          background-color: color-mix(in oklab, @thirdColor, rgba(255, 255, 255, 0.6) 80%);
+          padding-inline: 1em;
+          padding-block: 1.5em;
+        }
+
+        blockquote{
+          background-color:  color-mix(in oklab, color-mix(in oklab, @accentColor, @thirdColor), transparent 40%);
+          margin-inline: 15%;
+          max-width: 72ch;
+          padding-inline: 1em;
+          padding-block: 1.5em;
+          display: block;
+          position: relative;
+          text-align: center;
+
+          &::before{
+            content: "“";
+            display: block;
+            position: absolute;
+            font-size: 6em;
+            left: -0.15em;
+            top: -0.3em;
+            color: color-mix(in oklab, color-mix(in oklab, @accentColor, @thirdColor), @fontColor 40%);
+          }
+          &::after{
+            content: "„";
+            display: block;
+            position: absolute;
+            font-size: 6em;
+            bottom: -0.2em;
+            right: -0.15em;
+            color: color-mix(in oklab, color-mix(in oklab, @accentColor, @thirdColor), @fontColor 40%);
+          }
+        }
       }
     }
 
@@ -184,7 +231,7 @@ body{
 
     footer{
         grid-area: footer;
-        background-color: #1DBEE8;
+        background-color: cyan;
     }
 
 
