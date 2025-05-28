@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 508 285.75">
+  <defs>
+    <path id="reuse-0" fill="#f8df7b" d="M106.163 75.473h314.325v16.195H106.163z"/>
+    <path id="reuse-1" fill="#4a4950" d="m118.875 75.473 16.195 16.195-12.711.011-16.195-16.195z"/>
+  </defs>
+  <defs>
+    <use xlink:href="#d"/>
+    <use xlink:href="#d" id="e"/>
+    <use xlink:href="#d" id="a"/>
+  </defs>
+  <g transform="matrix(1.72924 -.2742 .1566 .98766 -180.245 248.946)">
+    <use xlink:href="#reuse-0"/>
+    <use xlink:href="#reuse-1"/>
+    <text xml:space="preserve" fill="#3f3f43" font-family="Impact" font-size="29.333" font-stretch="condensed" font-weight="400" style="-inkscape-font-specification:&quot;Impact Condensed&quot;;text-align:center;white-space:pre;shape-inside:url(#a)" transform="matrix(.34802 .34802 -.54814 .00048 208.656 -92.052)"><tspan x="480.719" y="492.193">WIP</tspan></text>
+    <use xlink:href="#b" transform="translate(25.947)"/>
+    <use xlink:href="#b" transform="translate(285.419)"/>
+    <use xlink:href="#b" transform="translate(259.472)"/>
+    <use xlink:href="#b" transform="translate(233.524)"/>
+    <use xlink:href="#b" transform="translate(207.577)"/>
+    <use xlink:href="#b" transform="translate(181.63)"/>
+    <use xlink:href="#b" transform="translate(155.683)"/>
+    <use xlink:href="#b" transform="translate(129.736)"/>
+    <use xlink:href="#b" transform="translate(103.789)"/>
+    <use xlink:href="#b" transform="translate(77.841)"/>
+    <use xlink:href="#b" transform="translate(51.894)"/>
+  </g>
+  <use xlink:href="#c" transform="matrix(1.72518 -.65558 .01942 1.68206 -150.305 378.156)"/>
+  <g id="c" transform="translate(-29.633 -120.62)">
+    <use xlink:href="#reuse-0" stroke-width=".265"/>
+    <g id="b">
+      <use xlink:href="#reuse-1" stroke-width=".29"/>
+      <text xml:space="preserve" fill="#3f3f43" font-family="Impact" font-size="29.333" font-stretch="condensed" font-weight="400" style="-inkscape-font-specification:&quot;Impact Condensed&quot;;text-align:center;white-space:pre;shape-inside:url(#d)" transform="matrix(.34802 .34802 -.54814 .00048 208.656 -92.052)"><tspan x="480.719" y="492.193">WIP</tspan></text>
+    </g>
+    <use xlink:href="#b" transform="translate(25.947)"/>
+    <use xlink:href="#b" transform="translate(285.419)"/>
+    <use xlink:href="#b" transform="translate(259.472)"/>
+    <use xlink:href="#b" transform="translate(233.524)"/>
+    <use xlink:href="#b" transform="translate(207.577)"/>
+    <use xlink:href="#b" transform="translate(181.63)"/>
+    <use xlink:href="#b" transform="translate(155.683)"/>
+    <use xlink:href="#b" transform="translate(129.736)"/>
+    <use xlink:href="#b" transform="translate(103.789)"/>
+    <use xlink:href="#b" transform="translate(77.841)"/>
+    <use xlink:href="#b" transform="translate(51.894)"/>
+  </g>
+  <use xlink:href="#c" transform="matrix(1.66537 .92607 -.99783 1.5456 -166.402 -11.445)"/>
+  <g transform="matrix(1.44795 .38578 -.37483 1.67337 -165.21 8.854)">
+    <use xlink:href="#reuse-0"/>
+    <use xlink:href="#reuse-1"/>
+    <text xml:space="preserve" fill="#3f3f43" font-family="Impact" font-size="29.333" font-stretch="condensed" font-weight="400" style="-inkscape-font-specification:&quot;Impact Condensed&quot;;text-align:center;white-space:pre;shape-inside:url(#e)" transform="matrix(.34802 .34802 -.54814 .00048 208.656 -92.052)"><tspan x="480.719" y="492.193">WIP</tspan></text>
+    <use xlink:href="#b" transform="translate(25.947)"/>
+    <use xlink:href="#b" transform="translate(285.419)"/>
+    <use xlink:href="#b" transform="translate(259.472)"/>
+    <use xlink:href="#b" transform="translate(233.524)"/>
+    <use xlink:href="#b" transform="translate(207.577)"/>
+    <use xlink:href="#b" transform="translate(181.63)"/>
+    <use xlink:href="#b" transform="translate(155.683)"/>
+    <use xlink:href="#b" transform="translate(129.736)"/>
+    <use xlink:href="#b" transform="translate(103.789)"/>
+    <use xlink:href="#b" transform="translate(77.841)"/>
+    <use xlink:href="#b" transform="translate(51.894)"/>
+  </g>
+</svg>
