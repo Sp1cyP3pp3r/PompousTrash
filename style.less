@@ -721,211 +721,26 @@ h6 {
 
   position: relative;
 
-  form{
-    display: flex;
-    flex-flow: column wrap;
-    justify-self: end;
-    container-type: inline-size;
-    align-items: center;
-    padding: 2cqb;
-    width: 55%;
-
-    float: inline-end;
-    position: absolute;
-    right: 0;
-
-    &::before{
-      text-align: center;
-      content: "Contact Form";
-      display: block;
-      position: absolute;
-      top: -1em;
-      color: var(--second-color);
-      font-size: 2em;
-      font-family: 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
-      font-weight: bold;
-      text-shadow: 1px 1px 0 color-mix(in oklab, var(--second-color), var(--third-color) 20%),
-      2px 2px 0 color-mix(in oklab, var(--second-color), var(--third-color) 40%),
-      3px 3px 0 color-mix(in oklab, var(--second-color), var(--third-color) 60%),
-      4px 4px 0 color-mix(in oklab, var(--second-color), var(--third-color) 80%),
-      5px 5px 0 color-mix(in oklab, var(--second-color), var(--third-color) 100%);
-    }
-    
-
-    label{
-      flex-grow: 1;
-      font-weight: bold;
-      font-family: var(--font-h);
-      width: 100%;
-
-      &:has(*:required){
-        position: relative;
-
-        &::after{
-          content: "*";
-          top: 0;
-          right: 0;
-          position: absolute;
-        }
-      }
-    }
-
-    button{
-      --height: 3em;
-      border-radius: 0;
-      border: none;
-      height: var(--height);
-      position: relative;
-      display: block;
-      background-color: transparent; /* Remove button background */
-      width: 75%;
-      margin-inline: auto;
-      margin-block-start: 1em;
-      cursor: pointer;
-      text-transform: uppercase;
-
-      & > span{
-        display: inline-block;
-        position: relative;
-        width: 100%;
-        height: 100%;
-        background-color: var(--third-color);
-        transform: skewX(var(--skewX));
-        z-index: 2;
-        transition: var(--time);
-
-        & > span{
-          display: inline-block;
-          height: 100%;
-          width: 100%;
-          line-height: var(--height);
-          transform: skewX(var(--skewXN));
-          transition: var(--time);
-          color: white;
-          text-shadow: 0em 0em 5px var(--light-color);
-        }
-      }
-
-      &::after, &::before{
-        content: "send";
-        font-size: 0;
-        width: 100%;
-        height: 100%;
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: var(--time);
-      }
-
-      &::after{
-        background-color: var(--fourth-color);
-        transform: skewX(var(--skewX2)) rotateZ(var(--rotateZ)) scaleX(1.1);
-        z-index: 0;
-
-      }
-      &::before{
-        background-color: var(--first-color);
-        transform: skewX(var(--skewXN2)) rotateZ(var(--rotateZN));
-        
-        z-index: 1;
-      }
-
-      --skewX: 12deg;
-      --skewXN: calc(var(--skewX) * -1);
-      --skewX2: calc(var(--skewX) * 2.1);
-      --skewXN2: calc(var(--skewX) * -1.8);
-      --rotateZ: 3deg;
-      --rotateZN: calc(var(--rotateZ) * -1.01);
-      --time: 0.2s;
-
-      &:hover{
-        --skewX: 25deg;
-        --rotateZ: 12deg;
-
-        &:active{
-          --skewX: 35deg;
-          --rotateZ: 20deg;
-          --time: 0s;
-        }
-      }
-
-      transition: var(--time);
-    }
-
-    --width: 85%;
-    input, textarea{
-      width: var(--width);
-      margin-inline-start: calc(100% - var(--width));
-      margin-block-start: 1em;
-      padding: 0.25em;
-      border-radius: 0;
-      border: none;
-      background-color: color-mix(in oklab, var(--second-color), var(--light-color) 54%);
-
-      &::placeholder{
-        color: color-mix(in oklab, var(--font-color), transparent);
-      }
-    }
-
-    input {
-
-    }
-
-    textarea{
-      height: 40ch;
-      resize: none;
-    }
-
-    small{
-      font-weight: normal;
-    }
-  }
+  
 
   .crutch{
     display: block;
     width: 100%;
   }
 
-}
 
-.border-candy {
-  background-color: color-mix(in oklab,
-    var(--fourth-color) 20%,
-    var(--second-color)
-  );
-  background-clip: padding-box;
-  border-width: 20px;
-  border-style: outset inset inset outset;
-  border-color: var(--third-color) var(--second-color) var(--first-color) var(--second-color);
-  box-shadow: .5em .5em 0 0 var(--fourth-color);
+  .form-git{
+    display: block;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+  }
 }
 
 small{
   font-size: 0.7em;
 }
 
-.label-grid{
-  display: grid;
-  width: 100%;
-  margin-block-end: 0.5em;
-  justify-items: center;
-}
-
-@container (width > 400px){
-  .label-grid{
-    grid-template-columns: 1fr 1fr;
-    grid-column-end: 2 span;
-    gap: 1em;
-
-    small{
-      display: block;
-      margin-block-start: 2px;
-    }
-    
-    --width: 100%;
-  }
-}
 
 .h-captcha iframe{
   width: 100% !important;
